@@ -1,0 +1,36 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ressources/smiley_sunglasses.png</file>
+        <file>ressources/smiley_smile.png</file>
+        <file>ressources/smiley_open.png</file>
+        <file>ressources/smiley_dead.png</file>
+        <file>ressources/display_negative.png</file>
+        <file>ressources/display_0.png</file>
+        <file>ressources/display_2.png</file>
+        <file>ressources/display_3.png</file>
+        <file>ressources/display_6.png</file>
+        <file>ressources/display_7.png</file>
+        <file>ressources/display_1.png</file>
+        <file>ressources/display_9.png</file>
+        <file>ressources/display_4.png</file>
+        <file>ressources/display_5.png</file>
+        <file>ressources/display_8.png</file>
+        <file>ressources/cell_questionmark.png</file>
+        <file>ressources/cell_mine.png</file>
+        <file>ressources/cell_mine_explode.png</file>
+        <file>ressources/cell_flagged.png</file>
+        <file>ressources/cell_covered.png</file>
+        <file>ressources/cell_8.png</file>
+        <file>ressources/cell_7.png</file>
+        <file>ressources/cell_6.png</file>
+        <file>ressources/cell_5.png</file>
+        <file>ressources/cell_4.png</file>
+        <file>ressources/cell_3.png</file>
+        <file>ressources/cell_2.png</file>
+        <file>ressources/cell_1.png</file>
+        <file>ressources/cell_nomine.png</file>
+        <file>ressources/cell_0.png</file>
+        <file>ressources/cell_covered_pressed.png</file>
+        <file>ressources/cell_questionmark_pressed.png</file>
+    </qresource>
+</RCC>
