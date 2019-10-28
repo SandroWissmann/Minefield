@@ -12,9 +12,9 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Webcamoid. If not, see <http://www.gnu.org/licenses/>.
+ * along with Minefield. If not, see <http://www.gnu.org/licenses/>.
  *
- * Web-Site: http://minefield.github.io/
+ * Web-Site: https://github.com/sandro4912/Minefield
  */
 
 #ifndef BESTTIMESDIALOG_H
