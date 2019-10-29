@@ -164,6 +164,10 @@ void Cell::uncoverIfNotFlagged()
 
 void Cell::pressIfCoveredOrQuestionmark()
 { 
+    if(mSingleMouseTimerLeft.isActive()) {
+        mSingleMouseTimerLeft.stop();
+    }
+
     if(mDisplayType == DisplayType::covered) {
         mDisplayType = DisplayType::coveredPressed;
         emit pressed();
@@ -178,6 +182,10 @@ void Cell::pressIfCoveredOrQuestionmark()
 
 void Cell::releaseIfCoveredOrQuestionmarkPressed()
 {
+    if(mSingleMouseTimerLeft.isActive()) {
+        mSingleMouseTimerLeft.stop();
+    }
+
     if(mDisplayType == DisplayType::coveredPressed) {
         mDisplayType = DisplayType::covered;
         emit released();
@@ -394,6 +402,10 @@ void Cell::handleMouseMoveEventInsideLeftButton(QMouseEvent *event)
 void Cell::handleMouseMoveEventOutsideLeftButton(QMouseEvent *event)
 {
     Q_UNUSED(event)
+
+    if(mSingleMouseTimerLeft.isActive()) {
+        mSingleMouseTimerLeft.stop();
+    }
 
     if(isPressed()) {
         releaseIfCoveredOrQuestionmarkPressed();

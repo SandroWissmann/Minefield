@@ -35,13 +35,13 @@ CellInputHandler::CellInputHandler(QObject *parent)
 
 bool CellInputHandler::eventFilter(QObject *watched, QEvent *event)
 {
-    if(event->type() == QEvent::MouseButtonPress){       
-       handleMouseButtonPressEvents(watched, event);
-       return true;
+    if(event->type() == QEvent::MouseButtonPress){
+        handleMouseButtonPressEvents(watched, event);
+        return true;
     }
-    if(event->type() == QEvent::MouseButtonRelease){      
+    if(event->type() == QEvent::MouseButtonRelease){
         handleMouseButtonReleaseEvents(watched, event);
-       return true;
+        return true;
     }
     if(event->type() == QEvent::MouseMove) {
         handleMouseMoveEvents(event);
@@ -55,25 +55,27 @@ void CellInputHandler::handleMouseButtonPressEvents(
 {
     auto mouseEvent = static_cast<QMouseEvent*>(event);
     auto cell = qobject_cast<Cell *>(watched);
+
     cell->handleMousePressEvent(mouseEvent);
+
+    mLastCell = cell;
 }
 
 void CellInputHandler::handleMouseButtonReleaseEvents(
         QObject *watched, QEvent *event)
 {
-    auto mouseEvent = static_cast<QMouseEvent*>(event);
-    auto cell = qobject_cast<Cell *>(watched);
-    QRect rect{ cell->mapToGlobal(QPoint(0, 0)), cell->size() };
+    Q_UNUSED(watched)
 
-    if(rect.contains(mouseEvent->globalPos())) {
-       cell->handleMouseReleaseEvent(mouseEvent);
+    auto mouseEvent = static_cast<QMouseEvent*>(event);
+    auto widget = QApplication::widgetAt(QCursor::pos());
+    auto cell = qobject_cast<Cell *>(widget);
+
+    if(cell) {
+        cell->handleMouseReleaseEvent(mouseEvent);
+        mLastCell = cell;
     }
-    else {
-        auto widget = QApplication::widgetAt(QCursor::pos());
-        auto otherCell = static_cast<Cell *>(widget);
-        if(otherCell) {
-            otherCell->handleMouseReleaseEvent(mouseEvent);
-        }
+    else if(mLastCell) {
+        mLastCell->handleMouseReleaseEvent(mouseEvent);
     }
 }
 
@@ -87,10 +89,8 @@ void CellInputHandler::handleMouseMoveEvents(QEvent *event)
         if(widget) {
             auto cell = qobject_cast<Cell *>(widget);
 
-            if(!cell || cell != mLastCell) {
-                if(mLastCell) {
-                    cellMoveOutsideHandle(mLastCell, mouseEvent);
-                }
+            if(mLastCell && (!cell || cell != mLastCell)) {
+                cellMoveOutsideHandle(mLastCell, mouseEvent);
             }
             if(!cell) {
                 mLastCell = nullptr;

@@ -77,7 +77,6 @@ private:
     int mFieldHeight;
     int mMinesLeft;
     CellInputHandler *mCellInputHandler;
-
 };
 
 #endif // MINEFIELD_H

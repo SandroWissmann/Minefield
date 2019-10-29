@@ -48,8 +48,6 @@ void SmileyPushButton::toggleColor(int value)
 
 void SmileyPushButton::setSmile()
 {
-    qDebug() << "set smile";
-
     mDisplayType = DisplayType::smile;
     update();
 }
@@ -62,8 +60,6 @@ void SmileyPushButton::setOpen()
 
 void SmileyPushButton::setSunglasses()
 {
-    qDebug() << "set sunglasses";
-
     mDisplayType = DisplayType::sunglasses;
     update();
 }
