@@ -18,8 +18,8 @@
  */
 
 
-#ifndef CELLBUTTON_H
-#define CELLBUTTON_H
+#ifndef CELL_H
+#define CELL_H
 
 #include <QWidget>
 
@@ -37,7 +37,7 @@ public:
         mine
     };
 
-    Cell(State state, QWidget *parent = nullptr);
+    explicit Cell(State state, QWidget *parent = nullptr);
 
     void setCountOfNeighbourMines(int count);
     [[nodiscard]] int countOfNeighbourMines() const;
@@ -134,4 +134,4 @@ private:
     DisplayType mDisplayType;
 };
 
-#endif // CELLBUTTON_H
+#endif // CELL_H

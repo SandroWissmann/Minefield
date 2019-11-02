@@ -30,8 +30,6 @@
 #include <QMouseEvent>
 #include <QImage>
 
-#include <QDebug>
-
 Cell::Cell(Cell::State state, QWidget *parent)
     :QWidget{ parent },
       mHasMine{ static_cast<bool>(state) },
@@ -40,15 +38,18 @@ Cell::Cell(Cell::State state, QWidget *parent)
       mColorOn{ true },
       mCountOfNeighbourMines{ 0 },
       mCountOfNeigboursFlagged{ 0 },
+      mElapsedTimer{},
+      mSingleMouseTimerLeft{},
+      mSingleMouseTimerRight{},
       mDisplayType{ DisplayType::covered }
 {
     setFixedSize(displayImage(mDisplayType).size());
 
     mElapsedTimer.start();
 
-    constexpr auto intervall = 50;
+    constexpr auto interval = 50;
     for(QTimer* timer : {&mSingleMouseTimerRight, &mSingleMouseTimerLeft}){
-        timer->setInterval(intervall);
+        timer->setInterval(interval);
         timer->setSingleShot(true);
     }
 
@@ -323,16 +324,14 @@ void Cell::setToUncoveredDisplayType()
 
 void Cell::handleMousePressEvent(QMouseEvent *event)
 {
-    if(!(event->buttons().testFlag(Qt::LeftButton) ||
-         event->buttons().testFlag(Qt::RightButton))) {
-        return;
-    }
-
     if(event->buttons().testFlag(Qt::LeftButton)) {
         mSingleMouseTimerLeft.start();
     }
     else if (event->buttons().testFlag(Qt::RightButton)){
         mSingleMouseTimerRight.start();
+    }
+    else {
+        return;
     }
 
     const auto elapsedTime = mElapsedTimer.restart();

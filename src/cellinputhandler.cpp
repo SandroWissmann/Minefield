@@ -25,8 +25,6 @@
 #include <QEvent>
 #include <QMouseEvent>
 
-#include <QDebug>
-
 CellInputHandler::CellInputHandler(QObject *parent)
     : QObject{ parent },
       mLastCell{ nullptr }
@@ -66,8 +64,8 @@ void CellInputHandler::handleMouseButtonReleaseEvents(
 {
     Q_UNUSED(watched)
 
-    auto mouseEvent = static_cast<QMouseEvent*>(event);
-    auto widget = QApplication::widgetAt(QCursor::pos());
+    auto mouseEvent = static_cast<QMouseEvent*>(event);    
+    auto widget = QApplication::widgetAt(mouseEvent->globalPos());
     auto cell = qobject_cast<Cell *>(widget);
 
     if(cell) {
