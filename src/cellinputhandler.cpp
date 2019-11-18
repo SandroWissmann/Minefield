@@ -33,19 +33,21 @@ CellInputHandler::CellInputHandler(QObject *parent)
 
 bool CellInputHandler::eventFilter(QObject *watched, QEvent *event)
 {
-    if(event->type() == QEvent::MouseButtonPress){
-        handleMouseButtonPressEvents(watched, event);
-        return true;
+    auto result{ true };
+    switch (event->type()) {
+        case QEvent::MouseButtonPress:
+            handleMouseButtonPressEvents(watched, event);
+            break;
+        case QEvent::MouseButtonRelease:
+            handleMouseButtonReleaseEvents(watched, event);
+            break;
+        case QEvent::MouseMove:
+            handleMouseMoveEvents(event);
+            break;
+        default:
+            result = false;
     }
-    if(event->type() == QEvent::MouseButtonRelease){
-        handleMouseButtonReleaseEvents(watched, event);
-        return true;
-    }
-    if(event->type() == QEvent::MouseMove) {
-        handleMouseMoveEvents(event);
-        return true;
-    }
-    return false;
+    return result;
 }
 
 void CellInputHandler::handleMouseButtonPressEvents(

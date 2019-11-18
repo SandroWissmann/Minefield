@@ -104,6 +104,11 @@ Game::Game(QWidget *parent)
     setLayout(layout);
 }
 
+Game::~Game()
+{
+    delete mElapsedTime;
+}
+
 int Game::mineFieldWidth()
 {
     if(mMinefield) {

@@ -8,3 +8,5 @@ include(../minefield-src.pri)
 
 SOURCES += main.cpp
 
+#QMAKE_CXXFLAGS += -Weffc++
+#QMAKE_CXXFLAGS += -isystem

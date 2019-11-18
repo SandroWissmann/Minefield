@@ -32,12 +32,14 @@ class Cell : public QWidget
 {
     Q_OBJECT
 public:
+    friend class CellInputHandler;
+
     enum class State{
         empty,
         mine
     };
 
-    explicit Cell(State state, QWidget *parent = nullptr);
+    Cell(State state, QWidget *parent = nullptr);
 
     void setCountOfNeighbourMines(int count);
     [[nodiscard]] int countOfNeighbourMines() const;
@@ -110,8 +112,6 @@ private:
     void uncover();
     void uncoverMine();
     void setToUncoveredDisplayType();
-
-    friend class CellInputHandler;
 
     void handleMousePressEvent(QMouseEvent *event);
     void handleMouseReleaseEvent(QMouseEvent *event);

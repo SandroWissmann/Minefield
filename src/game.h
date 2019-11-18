@@ -37,6 +37,7 @@ class Game : public QWidget
     Q_OBJECT
 public:
     explicit Game(QWidget *parent = nullptr);
+    ~Game();
 
     int mineFieldWidth();
     int mineFieldHeight();

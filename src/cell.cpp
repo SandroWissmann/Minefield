@@ -32,7 +32,7 @@
 
 Cell::Cell(Cell::State state, QWidget *parent)
     :QWidget{ parent },
-      mHasMine{ static_cast<bool>(state) },
+      mHasMine{ state == State::mine },
       mNeighboursPressed{ false },
       mQuestionMarksOn{ true },
       mColorOn{ true },
