@@ -38,11 +38,9 @@
 
 Game::Game(QWidget *parent)
     :QWidget(parent),
-    mInsideRender{ false },
     mLcdDisplayMinesLeft{ new LcdDisplay},
     mLcdDisplayElapsedTime{ new LcdDisplay },
     mSmileyPushButton{ new SmileyPushButton },
-    mMinefield{ nullptr },
     mTopFrame{ new QFrame },
     mBottomFrame{ new QFrame },
     mMainFrame{ new QFrame },

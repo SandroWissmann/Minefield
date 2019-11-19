@@ -32,8 +32,7 @@ LcdDisplay::LcdDisplay(QWidget *parent)
 }
 
 LcdDisplay::LcdDisplay(int value, QWidget *parent)
-    :QWidget{ parent },
-     mColorOn{ true }
+    :QWidget{ parent }
 {
     auto image =  getImage(0);   // assume all images have same size
     auto h = image.size().height();

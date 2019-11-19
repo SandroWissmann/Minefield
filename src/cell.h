@@ -123,15 +123,15 @@ private:
     void handleMouseMoveEventOutsideBothButtons(QMouseEvent *event);
 
     const bool mHasMine;
-    bool mNeighboursPressed;
-    bool mQuestionMarksOn;
-    bool mColorOn;
-    int mCountOfNeighbourMines;
-    int mCountOfNeigboursFlagged;
-    QElapsedTimer mElapsedTimer;
-    QTimer mSingleMouseTimerLeft;
-    QTimer mSingleMouseTimerRight;
-    DisplayType mDisplayType;
+    bool mNeighboursPressed{ false };
+    bool mQuestionMarksOn{ true };
+    bool mColorOn{ true };
+    int mCountOfNeighbourMines{ 0 };
+    int mCountOfNeigboursFlagged{ 0 };
+    QElapsedTimer mElapsedTimer{};
+    QTimer mSingleMouseTimerLeft{};
+    QTimer mSingleMouseTimerRight{};
+    DisplayType mDisplayType{ DisplayType::covered };
 };
 
 #endif // CELL_H

@@ -46,7 +46,7 @@ private:
     void cellMoveInsideHandle(Cell *cell, QMouseEvent *mouseEvent);
     void cellMoveOutsideHandle(Cell *cell, QMouseEvent *mouseEvent);
 
-    Cell *mLastCell;
+    Cell *mLastCell{ nullptr };
 };
 
 #endif // CELLINPUTHANDLER_H

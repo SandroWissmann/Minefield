@@ -52,9 +52,9 @@ private:
 
     QImage displayImage(DisplayType type);
 
-    bool mPressed;
-    bool mColorOn;
-    DisplayType mDisplayType;
+    bool mPressed{ false };
+    bool mColorOn{ true };
+    DisplayType mDisplayType{ DisplayType::smile };
 };
 
 #endif // SMILEYPUSHBUTTON_H

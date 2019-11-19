@@ -52,7 +52,7 @@ private:
     void createActions();
     void createMenus();
 
-    bool mCustomCheckedOnStart;
+    bool mCustomCheckedOnStart{ false };
 
     GameSettings mGameSettings;
 

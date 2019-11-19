@@ -33,7 +33,6 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
-      mCustomCheckedOnStart{ false },
       mGame{ new Game{ this } }
 {
     setWindowTitle("Minefield");

@@ -59,14 +59,14 @@ private slots:
 private:
     void connectToMinefield();
 
-    bool mInsideRender;
+    bool mInsideRender{ false };
 
     GameSettings mGameSettings;
 
     LcdDisplay *mLcdDisplayMinesLeft;
     LcdDisplay *mLcdDisplayElapsedTime;
     SmileyPushButton *mSmileyPushButton;
-    Minefield *mMinefield;
+    Minefield *mMinefield{ nullptr };
 
     QFrame *mTopFrame;
     QFrame *mBottomFrame;

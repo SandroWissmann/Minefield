@@ -26,10 +26,7 @@
 #include <QDebug>
 
 SmileyPushButton::SmileyPushButton(QWidget *parent)
-    :QPushButton{ parent },
-    mPressed{ false },
-    mColorOn{ true },
-    mDisplayType{ DisplayType::smile }
+    :QPushButton{ parent }
 {
     connect(this, &SmileyPushButton::pressed,
             this, &SmileyPushButton::setPressed);

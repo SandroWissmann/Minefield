@@ -26,8 +26,7 @@
 #include <QMouseEvent>
 
 CellInputHandler::CellInputHandler(QObject *parent)
-    : QObject{ parent },
-      mLastCell{ nullptr }
+    : QObject{ parent }
 {
 }
 

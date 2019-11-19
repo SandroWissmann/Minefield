@@ -41,7 +41,7 @@ protected:
 private:
     QImage getImage(int digit);
 
-    bool mColorOn;
+    bool mColorOn{ true };
     int mValue{ 0 };
     int mDigit0{ 0 };
     int mDigit1{ 0 };

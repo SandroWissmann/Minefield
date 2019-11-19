@@ -32,16 +32,7 @@
 
 Cell::Cell(Cell::State state, QWidget *parent)
     :QWidget{ parent },
-      mHasMine{ state == State::mine },
-      mNeighboursPressed{ false },
-      mQuestionMarksOn{ true },
-      mColorOn{ true },
-      mCountOfNeighbourMines{ 0 },
-      mCountOfNeigboursFlagged{ 0 },
-      mElapsedTimer{},
-      mSingleMouseTimerLeft{},
-      mSingleMouseTimerRight{},
-      mDisplayType{ DisplayType::covered }
+      mHasMine{ state == State::mine }
 {
     setFixedSize(displayImage(mDisplayType).size());
 
