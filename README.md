@@ -1,6 +1,6 @@
 # Minefield
 
-<img src="docs/minefield.gif"/>
+<div style="text-align:center"><img src="docs/minefield.gif"/></div>
 
 <table>
     <tr>
