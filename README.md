@@ -11,25 +11,25 @@
 
 ## About
 
-* Full featured cross Platform Minesweeper clone. Tested on Linux and Windows. Should run on MAC too.
+* Full featured Cross-platform Minesweeper clone. Tested on Linux and Windows. It should run on MAC too
 * Design based on [Windows 95 Version](http://www.minesweeper.info/downloads/Winmine95.html) 
-* Written from Scratch using QT with C++
+* It was written from scratch using QT with C++
 
 
 ## Features
 
 * Available Difficulties: Beginner, Intermediate, Expert and Custom
-* Turn Marks on and Off
-* Turn Color of the game on and off.
-* Highscores are saved
+* The Marks can be turned on and off
+* The color of the game can be turned on and off
+* The Highscores are saved
 
 
 ## Dependencies for Running Locally
 
 * QT >= 5.12 
-  * You can download QT [here](https://www.qt.io/download). Developed under QT Creator.
+  * You can download QT [here](https://www.qt.io/download). The game was developed under QT Creator
 
 
 ## Request
 
-* If you have a MAC and run it there maybe you can send me a screenshot to add to this readme.
+* If you have a MAC and run it there, maybe you can send me a screenshot to add it to this readme
