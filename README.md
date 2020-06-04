@@ -1,11 +1,11 @@
 # Minefield
 
-<div style="text-align:center"><img src="docs/minefield.gif"/></div>
+<img src="docs/minefield.gif"/>
 
 <table>
     <tr>
-    <td><img src="docs/windows.png" width=384 height=334></td>
-    <td><img src="docs/linux.png" width=384 height=334></td>
+    <td><img src="docs/windows.png" width=284 height=334></td>
+    <td><img src="docs/linux.png" width=284 height=334></td>
   </tr>
  </table>
 
