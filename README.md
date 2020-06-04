@@ -27,7 +27,7 @@
 ## Dependencies for Running Locally
 
 * QT >= 5.12 
-  * You can download QT [here].(https://www.qt.io/download). Developed under QT Creator.
+  * You can download QT [here](https://www.qt.io/download). Developed under QT Creator.
 
 
 ## Request
