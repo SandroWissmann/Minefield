@@ -33,3 +33,7 @@
 ## Request
 
 * If you have a MAC and run it there, maybe you can send me a screenshot to add it to this readme
+
+## License
+
+This project is licensed under the GPL3 License - see the [LICENSE.md](LICENSE.md) file for details
