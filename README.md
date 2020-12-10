@@ -13,7 +13,7 @@
 
 * Full featured Cross-platform Minesweeper clone. Tested on Linux and Windows. It should run on Mac too
 * Design based on [Windows 95 Version](http://www.minesweeper.info/downloads/Winmine95.html) 
-* It was written from scratch using QT with C++
+* It was written from scratch using Qt with C++
 
 
 ## Features
